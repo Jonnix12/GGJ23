@@ -25,16 +25,11 @@ public class Enemy : MonoBehaviour , IDisposable
       _fireRate = fireRate;
       _range = range;
    }
-
-
-   public void UpdateDircastion(Vector2 dirication)
-   {
-      _dircsation = dirication;
-   }
+   
    
    private void Update()
    {
-      transform.position = Vector2.MoveTowards(transform.position, _dircsation, _moveSpeed * Time.deltaTime);
+      transform.position = Vector2.MoveTowards(transform.position, , _moveSpeed * Time.deltaTime);
       
       CheckHp();
    }
