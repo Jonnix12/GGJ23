@@ -1,5 +1,5 @@
 using System;
-using ProJectil;
+using Projectile;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour , IDisposable
@@ -12,9 +12,9 @@ public class Enemy : MonoBehaviour , IDisposable
 
    private Range _range;
    private Vector2 _fireRate;
-   private Projectil _projectil;
+   private Projectile.Projectile _projectil;
 
-   public void Init(int hp, float moveSpeed, Projectil projectil, Vector2 fireRate,Range range)
+   public void Init(int hp, float moveSpeed, Projectile.Projectile projectil, Vector2 fireRate,Range range)
    {
       _hp = hp;
       _projectil = projectil;

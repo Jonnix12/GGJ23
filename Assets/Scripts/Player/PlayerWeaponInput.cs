@@ -1,4 +1,5 @@
 using UnityEngine;
+using Projectile;
 
 namespace Player
 {
@@ -7,14 +8,15 @@ namespace Player
         [SerializeField] GameObject _indicator;
         [SerializeField] GameObject _projectile;
         private PlayerInputSystem _playerInputSystem;
-        private Vector2 rotate;
+        private Vector2 _idicatorRotation;
+        private Vector2 _projectileDirection;
         private float _angle;
 
-        public float Angle => _angle;
+        public Vector2 ProjectileDirection => _projectileDirection;
         private void Awake()
         {
             _playerInputSystem = new PlayerInputSystem();
-            _playerInputSystem.Player.Rotate.performed += ctx => rotate = ctx.ReadValue<Vector2>();
+            _playerInputSystem.Player.Rotate.performed += ctx => _idicatorRotation = ctx.ReadValue<Vector2>();
             _playerInputSystem.Player.Shoot.performed += ctx => ShootProjectile();
         }
 
@@ -25,16 +27,17 @@ namespace Player
 
         private void Rotate()
         {
-            if (rotate.x == 0 && rotate.y == 0)
+            if (_idicatorRotation.x == 0 && _idicatorRotation.y == 0)
                 return;
-            float angle = Mathf.Atan2(-rotate.x, rotate.y) * Mathf.Rad2Deg;
-            _indicator.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            _projectileDirection = (new Vector2(_idicatorRotation.x, -_idicatorRotation.y) * Time.deltaTime * 100f).normalized / 100;
+            _angle = Mathf.Atan2(-_idicatorRotation.x, _idicatorRotation.y) * Mathf.Rad2Deg;
+            _indicator.transform.rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
         }
 
         private void ShootProjectile()
         {
-            Quaternion quaternion = new Quaternion(-rotate.x, rotate.y, 0, 0);
-            Instantiate(_projectile, transform.position, quaternion);
+            Quaternion quaternion = new Quaternion(-_idicatorRotation.x, _idicatorRotation.y, 0, 0);
+            GameObject projectile = Instantiate(_projectile, _indicator.transform.position, quaternion);
         }
 
         private void OnEnable()

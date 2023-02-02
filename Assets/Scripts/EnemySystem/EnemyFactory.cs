@@ -1,4 +1,4 @@
-﻿using ProJectil;
+﻿using Projectile;
 using UnityEngine;
 
 namespace EnemySystem

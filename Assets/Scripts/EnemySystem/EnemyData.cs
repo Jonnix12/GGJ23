@@ -1,4 +1,4 @@
-﻿using ProJectil;
+﻿using Projectile;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -16,7 +16,7 @@ namespace EnemySystem
         [Header("Combat")] [SerializeField] private Range _range;
         [SerializeField] private EnemyShotType _enemyShotType;
         [SerializeField,MinMaxSlider(1,10)] private Vector2 _fireRate;
-        [SerializeField] private Projectil _projectil;
+        [SerializeField] private Projectile.Projectile _projectil;
 
         public int Hp => _hp;
 
@@ -28,6 +28,6 @@ namespace EnemySystem
 
         public Vector2 FireRate => _fireRate;
 
-        public Projectil Projectil => _projectil;
+        public Projectile.Projectile Projectil => _projectil;
     }
 }
