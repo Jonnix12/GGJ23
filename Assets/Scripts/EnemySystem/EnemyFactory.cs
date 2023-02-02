@@ -1,11 +1,10 @@
-﻿using ProJectil;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace EnemySystem
 {
     public class EnemyFactory : MonoSingleton<EnemyFactory>
     {
-        private GameObject _enemyPrefab;
+        [SerializeField] private GameObject _enemyPrefab;
         
         public Enemy GetEnemy(EnemyData enemyData)
         {
