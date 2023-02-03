@@ -6,7 +6,6 @@ namespace Player
     public class PlayerWeaponInput : MonoBehaviour
     {
         [SerializeField] GameObject _indicator;
-        [SerializeField] GameObject _projectile;
         [SerializeField] private Transform _spawnPoint;
         private PlayerInputSystem _playerInputSystem;
         private Vector2 _rotation;
@@ -38,9 +37,6 @@ namespace Player
         private void ShootProjectile()
         {
             Quaternion quaternion = new Quaternion(-_rotation.x, _rotation.y, 0, 0);
-            GameObject projectile = Instantiate(_projectile, _spawnPoint.transform.position + _spawnPoint.transform.forward * 10, quaternion);
-            projectile.transform.rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
-
             PlayerManager.Instance.PlayerWeaponHandler.CurrentWeapon.Shoot(quaternion, _angle, _spawnPoint);
         }
 

@@ -75,4 +75,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectile: {fileID: 7154606004833445571, guid: 50f9d6cf431bcbf458c698a3b5b2c1e7, type: 3}
-  _amountOfProjectiles: 2
+  _amountOfProjectiles: 12
