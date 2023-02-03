@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 1
   _id: 7
-  _moveSpeed: 3
+  _moveSpeed: 2
   _range: 1
   _enemyShotType: 1
   _fireRate: {x: 4.742574, y: 5.6336637}

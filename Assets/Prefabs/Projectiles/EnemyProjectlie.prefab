@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _id: 1
-  _speed: 15
+  _speed: 4
   _damage: 1
   _maxLifeTime: 5
   _rb: {fileID: 1666398230618425724}

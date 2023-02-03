@@ -76,7 +76,7 @@ namespace EnemySystem
                         }
                     }
                 
-                    cahce.transform.position = _spwonPoint[Random.Range(0,_spwonPoint.Count)].position;
+                    cahce.transform.position = _spwonPoint[Random.Range(0,_spwonPoint.Count - 1)].position;
                 
                     switch(cahce.RangeType)
                     {
