@@ -10,7 +10,7 @@ namespace Pool
         [SerializeField] private Enemy _enemy;
         private Stack<Enemy> _pool;
 
-        public void Start()
+        private void Awake()
         {
             _pool = new Stack<Enemy>();
         }

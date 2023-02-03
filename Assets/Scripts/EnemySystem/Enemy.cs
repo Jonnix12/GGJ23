@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Pool;
 using UnityEngine;
+using Projectile;
 using Random = UnityEngine.Random;
 
 
@@ -20,10 +21,10 @@ public class Enemy : MonoBehaviour , IDisposable , IPoolable<Enemy>
     private float _rage;
     private float _playerOfSet;
     private Vector2 _fireRate;
-    private Projectile.BaseProjectile _projectil;
+    private BaseProjectile _projectil;
 
     public Range RangeType => _rangeType;
-    public void Init(int hp, float moveSpeed, Projectile.BaseProjectile projectil, Vector2 fireRate, Range rangeType)
+    public void Init(int hp, float moveSpeed, BaseProjectile projectil, Vector2 fireRate, Range rangeType)
     {
         _hp = hp;
         _projectil = projectil;

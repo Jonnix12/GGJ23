@@ -5,19 +5,19 @@ namespace Pool
 {
     public class ProjectilePool : MonoSingleton<ProjectilePool>
     {
-        private Stack<Projectile.Projectile> _pool;
+        private Stack<Projectile.BaseProjectile> _pool;
 
         public override void Awake()
         {
             base.Awake();
-            _pool = new Stack<Projectile.Projectile>();
+            _pool = new Stack<Projectile.BaseProjectile>();
         }
 
-        public Projectile.Projectile Pull(Projectile.Projectile projectile,Transform parent)
+        public Projectile.BaseProjectile Pull(Projectile.BaseProjectile projectile,Transform parent)
         {
             if (_pool.Count <= 0)
             {
-                var cache = Instantiate(projectile.gameObject, parent).GetComponent<Projectile.Projectile>();
+                var cache = Instantiate(projectile.gameObject, parent).GetComponent<Projectile.BaseProjectile>();
                 cache.OnDispos += AddObjectToPool;
                 return cache;
             }
@@ -30,7 +30,7 @@ namespace Pool
             }
         }
         
-        private void AddObjectToPool(Projectile.Projectile projectile)
+        private void AddObjectToPool(Projectile.BaseProjectile projectile)
         {
             projectile.gameObject.SetActive(false);
             _pool.Push(projectile);

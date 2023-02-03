@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Projectile
 {
 
-    public class Projectile : MonoBehaviour,IPoolable<Projectile>,IDisposable
+    public class BaseProjectile : MonoBehaviour,IPoolable<BaseProjectile>,IDisposable
     {
         [SerializeField] private float _speed;
         [SerializeField] private int _damage;
@@ -65,7 +65,7 @@ namespace Projectile
 
         }
 
-        public event Action<Projectile> OnDispos;
+        public event Action<BaseProjectile> OnDispos;
 
         public void Dispose()
         {

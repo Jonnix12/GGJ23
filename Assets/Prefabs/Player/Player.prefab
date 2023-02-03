@@ -385,6 +385,7 @@ MonoBehaviour:
   _playerWeaponsWheel:
   - {fileID: 3088262585458198465, guid: 620ffaa7f6023934d85fcef56dd9614a, type: 3}
   - {fileID: -3151541394955526254, guid: 85bdc3d4975e06e4f93d7b003bc1a15e, type: 3}
+  - {fileID: 3918577790384136543, guid: f5fcd356bb81a6b4c887127e246f5b2f, type: 3}
 --- !u!58 &981350779348682415
 CircleCollider2D:
   m_ObjectHideFlags: 0

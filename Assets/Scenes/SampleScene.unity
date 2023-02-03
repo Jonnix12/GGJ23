@@ -392,24 +392,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1903226354}
   _spwonPoint:
-  - {fileID: 1845000538}
   - {fileID: 930332495}
   - {fileID: 1682693088}
   - {fileID: 1122797643}
-  _spownRate: {x: 2.4314442, y: 5.4917736}
-  _NumberOfStateEnemys: 5
+  _spownRate: {x: 1.7042238, y: 2.7080407}
+  _NumberOfStateEnemys: 10
   _PlayerOfSet: 1.38
   _sortDis: 4.17
   _longDis: 7.06
   enemyGtoups:
   - _enemyData: {fileID: 11400000, guid: 707775ef34ab43a4db3b84fa3b2d716c, type: 2}
     _numberOfEnemy: 20
-    _isEmpty: 0
-  - _enemyData: {fileID: 11400000, guid: b8f6522758acf7b4bbf05120b3398e6e, type: 2}
-    _numberOfEnemy: 8
-    _isEmpty: 0
-  - _enemyData: {fileID: 11400000, guid: b8f6522758acf7b4bbf05120b3398e6e, type: 2}
-    _numberOfEnemy: 5
     _isEmpty: 0
 --- !u!114 &1724395586
 MonoBehaviour:

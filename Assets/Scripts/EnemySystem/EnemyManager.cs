@@ -32,9 +32,12 @@ namespace EnemySystem
 
                 if (cahce == null)
                 {
-                    continue;
+                    if (!CheckEnd())
+                    {
+                        continue;
+                    }
                 }
-                
+
                 cahce.transform.position = _spwonPoint[Random.Range(0,_spwonPoint.Count)].position;
                 
                 switch(cahce.RangeType)
@@ -64,7 +67,10 @@ namespace EnemySystem
 
                 if (cahce == null)
                 {
-                    continue;
+                    if (!CheckEnd())
+                    {
+                        continue;
+                    }
                 }
                 
                 cahce.transform.position = _spwonPoint[Random.Range(0,_spwonPoint.Count)].position;
@@ -87,16 +93,18 @@ namespace EnemySystem
             }
         }
 
-        private void Update()
+        private bool CheckEnd()
         {
             foreach (var enemyGtoup in enemyGtoups)
             {
                 if (!enemyGtoup._isEmpty)
                 {
-                    return;
+                    return false;
                 }
-                OnAllEnemyDied?.Invoke();   
             }
+            StopAllCoroutines();
+            OnAllEnemyDied?.Invoke();
+            return true;
         }
 
         private void RemoveEnemy(Enemy enemy)
