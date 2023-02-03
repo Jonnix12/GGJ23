@@ -132,7 +132,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1666398230618425720, guid: 58766038e4592d64498739f74e469ead, type: 3}
       propertyPath: m_Name
-      value: TomatoProjectile
+      value: EnemyProjectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666398230618425722, guid: 58766038e4592d64498739f74e469ead, type: 3}
+      propertyPath: m_Size.x
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666398230618425722, guid: 58766038e4592d64498739f74e469ead, type: 3}
+      propertyPath: m_Size.y
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666398230618425722, guid: 58766038e4592d64498739f74e469ead, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1666398230618425725, guid: 58766038e4592d64498739f74e469ead, type: 3}
       propertyPath: m_RootOrder
