@@ -16,6 +16,8 @@ public class PlayerWeaponHandler : MonoBehaviour
         private int _currentWeaponID;
         public BaseWeapon CurrentWeapon => _currentWeapon;
 
+        public int CurrentWeaponID => _currentWeaponID;
+
         private void Awake()
         {
             if (_playerWeaponsWheel.Count == 0 || _playerWeaponsWheel == null)
@@ -23,18 +25,25 @@ public class PlayerWeaponHandler : MonoBehaviour
 
             _currentWeapon = _playerWeaponsWheel[0];
             _currentWeaponID = 0;
+            RightWeapon.sprite = null;
         }
 
-        public void ChangeWeapon(bool isNext)
+        public void ChangeWeapon(bool isNext, float angle)
         {
             if (_playerWeaponsWheel.Count == 1)
                 return;
 
             if (isNext)
+            {
                 MoveToNextWeapon();
+                ChangeSpriteByRotation(angle);
+            }
 
             else
+            {
                 MoveToPreviousWeapon();
+                ChangeSpriteByRotation(angle);
+            }
         }
 
         private void MoveToNextWeapon()
@@ -67,9 +76,25 @@ public class PlayerWeaponHandler : MonoBehaviour
             }
         }
 
-        private void ChangeSpriteByRotation()
+        public void ChangeSpriteByRotation(float angle)
         {
+            if (angle < 0 )
+                ChangeToRightWeaponSprite();
 
+            else if(angle >= 0)
+                ChangeToLeftWeaponSprite();
+        }
+
+        private void ChangeToRightWeaponSprite()
+        {
+            LeftWeapon.sprite = null;
+            RightWeapon.sprite = _currentWeapon.GetWeaponSprite(true);
+        }
+
+        private void ChangeToLeftWeaponSprite()
+        {
+            RightWeapon.sprite = null;
+            LeftWeapon.sprite = _currentWeapon.GetWeaponSprite(false);
         }
     }
 }
