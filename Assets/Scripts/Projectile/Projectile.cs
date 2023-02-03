@@ -1,9 +1,10 @@
 ﻿using System;
+using Pool;
 using UnityEngine;
 
 namespace Projectile
 {
-    public class Projectile : MonoBehaviour
+    public class Projectile : MonoBehaviour,IPoolable<Projectile>,IDisposable
     {
         [SerializeField] private float _speed;
         [SerializeField] private int _damage;
@@ -20,12 +21,19 @@ namespace Projectile
             transform.position += transform.up * _speed * Time.deltaTime;
             _currentLifetime += Time.deltaTime;
             if (_currentLifetime >= _maxLifeTime)
+            {
                 Exploed();
+            }
+        }
+
+        public void Reset()
+        {
+            _currentLifetime = 0;
         }
 
         private void Exploed()
         {
-            Destroy(this.gameObject);
+            Dispose();
         }
         
         private void OnTriggerEnter2D(Collider2D col)
@@ -45,13 +53,22 @@ namespace Projectile
                     {
                         player.DoDamage(_damage);
                         Exploed();
+                        Debug.Log("Hit player");
                     }
                     break;
                 default:
                     Exploed();
+                    Debug.Log("Hit something");
                     break;
             }
 
+        }
+
+        public event Action<Projectile> OnDispos;
+
+        public void Dispose()
+        {
+            OnDispos?.Invoke(this);
         }
     }
 

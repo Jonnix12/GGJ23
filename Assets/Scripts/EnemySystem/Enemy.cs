@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
+using Pool;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Enemy : MonoBehaviour , IDisposable
+public class Enemy : MonoBehaviour , IDisposable , IPoolable<Enemy>
 {
    public event Action<Enemy> OnEnemyDied;
 
@@ -51,7 +52,12 @@ public class Enemy : MonoBehaviour , IDisposable
    {
       var _rotation = (Player.Player.Instance.transform.position - transform.position).normalized;
       Quaternion quaternion = Quaternion.Euler(_rotation.x,_rotation.y,0);
-      GameObject projectile = Instantiate(_projectil.gameObject, transform.position, quaternion);
+      Projectile.Projectile projectile = ProjectilePool.Instance.Pull(_projectil,transform);
+      
+      projectile.transform.parent = transform;
+      projectile.transform.position = transform.position;
+      projectile.transform.rotation = quaternion;
+      //GameObject projectile = Instantiate(_projectil.gameObject, transform.position, quaternion);
       //projectile.transform.rotation = quaternion;
    }
 
@@ -101,8 +107,10 @@ public class Enemy : MonoBehaviour , IDisposable
 
    public void Dispose()
    {
-      Destroy(this);
+      OnDispos?.Invoke(this);
    }
+
+   public event Action<Enemy> OnDispos;
 }
 
 public enum EnemyShotType
