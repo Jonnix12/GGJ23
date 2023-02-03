@@ -16,6 +16,8 @@ public class PlayerWeaponHandler : MonoBehaviour
         private int _currentWeaponID;
         public BaseWeapon CurrentWeapon => _currentWeapon;
 
+        public int CurrentWeaponID => _currentWeaponID;
+
         private void Awake()
         {
             if (_playerWeaponsWheel.Count == 0 || _playerWeaponsWheel == null)
