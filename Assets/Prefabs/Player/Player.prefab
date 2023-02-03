@@ -193,7 +193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907386149621348814}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.023, y: -0.026, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 8949509454514008478}
   - component: {fileID: 3362384003248615386}
   - component: {fileID: 8754530229074980884}
-  - component: {fileID: 981350779348682415}
+  - component: {fileID: 730603001898109749}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -318,7 +318,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 1db4862595729864cbac798702a55450, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -345,7 +345,7 @@ MonoBehaviour:
   _playerInputHandler: {fileID: 8949509454514008478}
   _playerWeaponHandler: {fileID: 713749127804350}
   spriteRenderer: {fileID: 4711583766753648695}
-  _collider2D: {fileID: 981350779348682415}
+  _collider2D: {fileID: 730603001898109749}
 --- !u!114 &8949509454514008478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -388,8 +388,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _indicator: {fileID: 1907386149621348814}
   _spawnPoint: {fileID: 4921893948685869758}
---- !u!58 &981350779348682415
-CircleCollider2D:
+--- !u!60 &730603001898109749
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -402,5 +402,23 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.11
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.03, y: 0.16}
+      - {x: -0.089999996, y: 0.16}
+      - {x: -0.11, y: 0.11}
+      - {x: -0.11, y: -0.11}
+      - {x: -0.089999996, y: -0.22999999}
+      - {x: 0.06, y: -0.22999999}
+      - {x: 0.07, y: -0.17999999}
+      - {x: 0.08, y: -0.099999994}
+      - {x: 0.08, y: 0.11}
