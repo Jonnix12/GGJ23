@@ -405,10 +405,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectiles:
-  - {fileID: 2971759353202677934, guid: 50f9d6cf431bcbf458c698a3b5b2c1e7, type: 3}
-  - {fileID: 2971759353202677934, guid: 42fbaa5874b0b31458c8388128e5a2ec, type: 3}
-  - {fileID: 2971759353202677934, guid: 57ad14d69bdd0a646b61d4acfe5f5433, type: 3}
-  - {fileID: 2971759353202677934, guid: c919e233c78094a47b9b49e2dddcc48c, type: 3}
+  - {fileID: 1666398230618425727, guid: 58766038e4592d64498739f74e469ead, type: 3}
+  - {fileID: 1666398230618425727, guid: 283856faef3d7694cb41346a6a518efd, type: 3}
 --- !u!4 &1647210051
 Transform:
   m_ObjectHideFlags: 0
@@ -532,6 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pool: {fileID: 1724395587}
+  _projectile: {fileID: 1666398230618425727, guid: 58766038e4592d64498739f74e469ead, type: 3}
 --- !u!114 &1724395587
 MonoBehaviour:
   m_ObjectHideFlags: 0
