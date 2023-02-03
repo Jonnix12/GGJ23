@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Player;
 
 namespace Player
 {
@@ -41,8 +42,12 @@ namespace Player
 
         private void Move()
         {
+            if (move.x == 0 && move.y == 0)
+                return;
             Vector2 m = new Vector2(move.x, move.y).normalized * Time.deltaTime * _speed;
+            float joystickAngle = Mathf.Atan2(-move.x, move.y) * Mathf.Rad2Deg;
             transform.Translate(m, Space.World);
+            PlayerManager.Instance.PlayerAnimationHandler.ChangeIdleSprite(joystickAngle);
         }
 
         private void OnEnable()
