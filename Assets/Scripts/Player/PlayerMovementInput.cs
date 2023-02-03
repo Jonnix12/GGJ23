@@ -1,8 +1,5 @@
 ﻿using UnityEngine;
-using System;
 using System.Collections;
-using UnityEngine.InputSystem;
-using Player;
 
 namespace Player
 {
