@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6548490356319803751}
   - component: {fileID: 6548490356319803750}
   - component: {fileID: 6548490356319803749}
+  - component: {fileID: 6663524513686441136}
   m_Layer: 0
   m_Name: GreenPepper
   m_TagString: Untagged
@@ -105,3 +106,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6663524513686441136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6548490356319803748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4734d0bad263a42a1fabffee042da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 3

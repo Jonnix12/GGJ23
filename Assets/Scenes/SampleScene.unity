@@ -513,11 +513,29 @@ MonoBehaviour:
   _sortDis: 2.69
   _longDis: 4.97
   enemyGtoups:
-  - _enemyData: {fileID: 11400000, guid: 707775ef34ab43a4db3b84fa3b2d716c, type: 2}
-    _numberOfEnemy: 30
+  - _enemyData: {fileID: 11400000, guid: b8f6522758acf7b4bbf05120b3398e6e, type: 2}
+    _numberOfEnemy: 5
     _isEmpty: 0
   - _enemyData: {fileID: 11400000, guid: 707775ef34ab43a4db3b84fa3b2d716c, type: 2}
-    _numberOfEnemy: 30
+    _numberOfEnemy: 5
+    _isEmpty: 0
+  - _enemyData: {fileID: 11400000, guid: a30bedae4603d0445b7506a813463f1a, type: 2}
+    _numberOfEnemy: 5
+    _isEmpty: 0
+  - _enemyData: {fileID: 11400000, guid: 03368a10de6ca724c9106f482ae487a8, type: 2}
+    _numberOfEnemy: 5
+    _isEmpty: 0
+  - _enemyData: {fileID: 11400000, guid: 2d8dba5110b54624e9ab700798172181, type: 2}
+    _numberOfEnemy: 5
+    _isEmpty: 0
+  - _enemyData: {fileID: 11400000, guid: 368390a417f291c4b91f2c3d32be9fa2, type: 2}
+    _numberOfEnemy: 5
+    _isEmpty: 0
+  - _enemyData: {fileID: 11400000, guid: d34f25d70f57c944094de07969c018f5, type: 2}
+    _numberOfEnemy: 5
+    _isEmpty: 0
+  - _enemyData: {fileID: 11400000, guid: 462a515520c6b274f8ec3d222e6e766a, type: 2}
+    _numberOfEnemy: 5
     _isEmpty: 0
 --- !u!114 &1724395586
 MonoBehaviour:
@@ -546,7 +564,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _paren: {fileID: 1724395584}
   _enemys:
-  - {fileID: 2114405575077807806, guid: 7623283895f3af944b880f3997ebdd13, type: 3}
+  - {fileID: 6581040870593066419, guid: 9106deb85bb0f204181ccc36a216bc44, type: 3}
+  - {fileID: 8663744609064345707, guid: 85bc7b3ae293e5c42b55514e9f02ac4b, type: 3}
+  - {fileID: 6663524513686441136, guid: b4de1e75e3aa6604e8c55e78b228f5a3, type: 3}
+  - {fileID: 7272515585242452304, guid: c9e66dc0400615a429763dc8ff26938a, type: 3}
+  - {fileID: 4200578346861462193, guid: eff6e71c15cace94f9f54092f689abd5, type: 3}
+  - {fileID: 4788856670111632257, guid: baf2982d49e29da44bcee5081cb1f173, type: 3}
+  - {fileID: 7435643714415329220, guid: 385e2304ebad86349aceba2576919106, type: 3}
+  - {fileID: 3798825822705629026, guid: 9fa40303f9035b14e8fc5b3efe91a770, type: 3}
 --- !u!1 &1810958952
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,6 +702,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2046306265}
   - component: {fileID: 2046306264}
+  - component: {fileID: 2046306266}
   m_Layer: 0
   m_Name: Barn
   m_TagString: Untagged
@@ -751,6 +777,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2046306266
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046306263}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.008661032, y: 0.047145665}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1232777, y: 1.4897627}
+  m_EdgeRadius: 0
 --- !u!1 &2119053731
 GameObject:
   m_ObjectHideFlags: 3

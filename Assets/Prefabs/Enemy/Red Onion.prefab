@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8277235246931207607}
   - component: {fileID: 8277235246931207606}
   - component: {fileID: 8277235246931207605}
+  - component: {fileID: 7272515585242452304}
   m_Layer: 0
   m_Name: Red Onion
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1980761339, guid: e4cb2220677bbff46b18f6e2c190ad54, type: 3}
+  m_Sprite: {fileID: -1118594458, guid: 1df626f4560d1bf4eb31b953aac7ecca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,3 +106,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7272515585242452304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8277235246931207604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba4734d0bad263a42a1fabffee042da8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 5
