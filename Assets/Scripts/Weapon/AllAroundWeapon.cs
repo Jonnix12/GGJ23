@@ -17,14 +17,14 @@ namespace Weapon
                 for (int i = 0; i < _amountOfProjectiles-1; i++)
                 {
                     angle += angleToAdd;
-                    BaseProjectile projectile = ProjectilePool.Instance.Pull(_projectile, null);
+                    BaseProjectile projectile = ProjectilePool.Instance.Pull(_projectile.ID, null);
                     projectile.transform.position = spawnPosition.parent.position;
                     projectile.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 }
             }
 
             else
-            base.Shoot(quaternion, angle, spawnPosition);
+                base.Shoot(quaternion, angle, spawnPosition);
         }
 
     }

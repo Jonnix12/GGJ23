@@ -7,6 +7,7 @@ namespace Projectile
 
     public class BaseProjectile : MonoBehaviour,IPoolable<BaseProjectile>,IDisposable
     {
+        [SerializeField] private int _id;
         [SerializeField] private float _speed;
         [SerializeField] private int _damage;
         [SerializeField] private float _maxLifeTime;
@@ -15,6 +16,8 @@ namespace Projectile
 
         private Vector3 _dirction;
         private float _currentLifetime;
+
+        public int ID => _id;
 
         private void Update()
         {

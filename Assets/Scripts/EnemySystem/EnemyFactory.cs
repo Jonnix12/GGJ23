@@ -10,9 +10,9 @@ namespace EnemySystem
         
         public Enemy GetEnemy(EnemyData enemyData)
         {
-            Enemy enemy = _pool.PullEnemy();
+            Enemy enemy = _pool.PullEnemy(enemyData.ID);
          
-            enemy.Init(enemyData.Hp,enemyData.MoveSpeed,enemyData.Projectil,enemyData.FireRate,enemyData.Range);
+            enemy.Init(enemyData.Hp,enemyData.MoveSpeed,enemyData.Projectil,enemyData.FireRate,enemyData.Range,enemyData.ID);
 
             return enemy;
         }

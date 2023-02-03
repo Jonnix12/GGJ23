@@ -14,6 +14,7 @@ namespace EnemySystem
         [SerializeField] private Transform _player;
         [SerializeField] private List<Transform> _spwonPoint;
         [SerializeField, MinMaxSlider(1, 10)] private Vector2 _spownRate;
+        [SerializeField, MinMaxSlider(1, 10)] private Vector2 _spownAmount;
         [SerializeField] private int _NumberOfStateEnemys;
         [SerializeField] private float _PlayerOfSet;
         [SerializeField] private float _sortDis;
@@ -62,32 +63,37 @@ namespace EnemySystem
         {
             while (true)
             {
-              
-                var cahce = enemyGtoups[Random.Range(0,enemyGtoups.Count)].GetEnemy();
-
-                if (cahce == null)
+                var amount = Random.Range((int)_spownAmount.x, (int)_spownAmount.y);
+                for (int i = 0; i < amount; i++)
                 {
-                    if (!CheckEnd())
+                    var cahce = enemyGtoups[Random.Range(0,enemyGtoups.Count)].GetEnemy();
+
+                    if (cahce == null)
                     {
-                        continue;
+                        if (!CheckEnd())
+                        {
+                            continue;
+                        }
                     }
-                }
                 
-                cahce.transform.position = _spwonPoint[Random.Range(0,_spwonPoint.Count)].position;
+                    cahce.transform.position = _spwonPoint[Random.Range(0,_spwonPoint.Count)].position;
                 
-                switch(cahce.RangeType)
-                {
-                    case Range.Short:
-                        cahce.SetRange(_sortDis,_PlayerOfSet);
-                        break;
-                    case Range.Long:
-                        cahce.SetRange(_longDis,_sortDis);
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
+                    switch(cahce.RangeType)
+                    {
+                        case Range.Short:
+                            cahce.SetRange(_sortDis,_PlayerOfSet);
+                            break;
+                        case Range.Long:
+                            cahce.SetRange(_longDis,_sortDis);
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
 
-                _enemies.Add(cahce);
+                    cahce.OnEnemyDied += RemoveEnemy;
+                    _enemies.Add(cahce);
+
+                }
                 
                 yield return new WaitForSeconds(Random.Range(_spownRate.x, _spownRate.y));
             }
@@ -109,6 +115,7 @@ namespace EnemySystem
 
         private void RemoveEnemy(Enemy enemy)
         {
+            enemy.OnEnemyDied -= RemoveEnemy;
             _enemies.Remove(enemy);
             enemy.Dispose();
         }
