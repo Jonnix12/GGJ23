@@ -3,6 +3,7 @@ using System.Collections;
 using Pool;
 using UnityEngine;
 using Projectile;
+using Weapon;
 using Random = UnityEngine.Random;
 
 
@@ -21,16 +22,16 @@ public class Enemy : MonoBehaviour , IDisposable , IPoolable<Enemy>
     private float _rage;
     private float _playerOfSet;
     private Vector2 _fireRate;
-    private BaseProjectile _projectile;
+    private BaseWeapon _weapon;
 
     public int ID => _id;
 
     public Range RangeType => _rangeType;
-    public void Init(int hp, float moveSpeed, BaseProjectile projectil, Vector2 fireRate, Range rangeType,int id)
+    public void Init(int hp, float moveSpeed, Vector2 fireRate,BaseWeapon weapon, Range rangeType,int id)
     {
         _id = id;
         _hp = hp;
-        _projectile = projectil;
+        _weapon = weapon;
         _moveSpeed = moveSpeed;
         _fireRate = fireRate;
         _rangeType = rangeType;
@@ -59,9 +60,7 @@ public class Enemy : MonoBehaviour , IDisposable , IPoolable<Enemy>
         var _rotation = (Player.PlayerManager.Instance.transform.position - transform.position).normalized;
         Quaternion quaternion = Quaternion.Euler(_rotation.x, _rotation.y, 0);
         float _angle = Mathf.Atan2(-_rotation.x, _rotation.y) * Mathf.Rad2Deg;
-        BaseProjectile projectile = ProjectilePool.Instance.Pull(_projectile.ID, transform);
-        projectile.transform.position = transform.position;
-        projectile.transform.rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
+        _weapon.Shoot(quaternion,_angle,transform);
     }
 
     private IEnumerator Move()

@@ -6,7 +6,7 @@ namespace Weapon
 {
     public class AllAroundWeapon : BaseWeapon
     {
-        [SerializeField] int _amountOfProjectiles;
+        [SerializeField] int _amountOfProjectiles = 12;
 
         public override void Shoot(Quaternion quaternion, float angle, Transform spawnPosition)
         {
@@ -17,9 +17,7 @@ namespace Weapon
                 for (int i = 0; i < _amountOfProjectiles-1; i++)
                 {
                     angle += angleToAdd;
-                    BaseProjectile projectile = ProjectilePool.Instance.Pull(_projectile.ID, null);
-                    projectile.transform.position = spawnPosition.parent.position;
-                    projectile.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                    base.Shoot(quaternion,angle, spawnPosition);
                 }
             }
 

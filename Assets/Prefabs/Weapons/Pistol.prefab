@@ -78,6 +78,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38625d457bb1ae440b188f3f89de3270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectile: {fileID: 2971759353202677934, guid: 57ad14d69bdd0a646b61d4acfe5f5433, type: 3}
+  _projectile: {fileID: 1666398230618425727, guid: 283856faef3d7694cb41346a6a518efd, type: 3}
   _leftWeaponSprite: {fileID: 21300000, guid: 791b7fe6a0d04a54fac380a6541234cc, type: 3}
   _rightWeaponSprite: {fileID: 21300000, guid: 1c6ffdb26561eb948a7964bbc7ef88e3, type: 3}
