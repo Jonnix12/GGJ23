@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 8949509454514008478}
   - component: {fileID: 3362384003248615386}
   - component: {fileID: 8754530229074980884}
+  - component: {fileID: 8674223823364409336}
   - component: {fileID: 981350779348682415}
   m_Layer: 0
   m_Name: Player
@@ -326,6 +327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 30
   _playerInputHandler: {fileID: 8949509454514008478}
+  _playerWeaponHandler: {fileID: 8674223823364409336}
 --- !u!114 &8949509454514008478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,7 +369,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _indicator: {fileID: 1907386149621348814}
   _projectile: {fileID: 7154606004833445571, guid: 42fbaa5874b0b31458c8388128e5a2ec, type: 3}
-  _spownPoint: {fileID: 4921893948685869758}
+  _spawnPoint: {fileID: 4921893948685869758}
+--- !u!114 &8674223823364409336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4711583766753648681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9102dab4d20c4034db27ae4708031449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerWeaponsWheel:
+  - {fileID: 3088262585458198465, guid: 620ffaa7f6023934d85fcef56dd9614a, type: 3}
+  - {fileID: -3151541394955526254, guid: 85bdc3d4975e06e4f93d7b003bc1a15e, type: 3}
 --- !u!58 &981350779348682415
 CircleCollider2D:
   m_ObjectHideFlags: 0

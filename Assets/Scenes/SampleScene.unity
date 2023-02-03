@@ -207,6 +207,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1401367879 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4921893948685869758, guid: 14608289601daec45858b0bbf384854f, type: 3}
+  m_PrefabInstance: {fileID: 4711583768646372807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1724395583
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,5 +394,13 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8674223823364409336, guid: 14608289601daec45858b0bbf384854f, type: 3}
+      propertyPath: _playerWeaponsWheel.Array.data[0]
+      value: 
+      objectReference: {fileID: 3088262585458198465, guid: 620ffaa7f6023934d85fcef56dd9614a, type: 3}
+    - target: {fileID: 8754530229074980884, guid: 14608289601daec45858b0bbf384854f, type: 3}
+      propertyPath: _spawnPoint
+      value: 
+      objectReference: {fileID: 1401367879}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14608289601daec45858b0bbf384854f, type: 3}

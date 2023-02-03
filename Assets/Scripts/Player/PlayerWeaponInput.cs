@@ -7,7 +7,7 @@ namespace Player
     {
         [SerializeField] GameObject _indicator;
         [SerializeField] GameObject _projectile;
-        [SerializeField] private Transform _spownPoint;
+        [SerializeField] private Transform _spawnPoint;
         private PlayerInputSystem _playerInputSystem;
         private Vector2 _rotation;
         private float _angle;
@@ -18,6 +18,8 @@ namespace Player
             _playerInputSystem.Player.Rotate.performed += ctx => _rotation = ctx.ReadValue<Vector2>();
             _playerInputSystem.Player.Rotate.performed += ctx => _rotation = ctx.ReadValue<Vector2>();
             _playerInputSystem.Player.Shoot.performed += ctx => ShootProjectile();
+            _playerInputSystem.Player.SwitchToRightWeapon.performed += ctx => PlayerManager.Instance.PlayerWeaponHandler.ChangeWeapon(true);
+            _playerInputSystem.Player.SwitchToLeftWeapon.performed += ctx => PlayerManager.Instance.PlayerWeaponHandler.ChangeWeapon(false);
         }
 
         private void Update()
@@ -36,8 +38,10 @@ namespace Player
         private void ShootProjectile()
         {
             Quaternion quaternion = new Quaternion(-_rotation.x, _rotation.y, 0, 0);
-            GameObject projectile = Instantiate(_projectile, _spownPoint.transform.position + _spownPoint.transform.forward * 10, quaternion);
+            GameObject projectile = Instantiate(_projectile, _spawnPoint.transform.position + _spawnPoint.transform.forward * 10, quaternion);
             projectile.transform.rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
+
+            PlayerManager.Instance.PlayerWeaponHandler.CurrentWeapon.Shoot(quaternion, _angle, _spawnPoint);
         }
 
         private void OnEnable()

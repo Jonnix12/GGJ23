@@ -16,7 +16,7 @@ namespace EnemySystem
         [Header("Combat")] [SerializeField] private Range _range;
         [SerializeField] private EnemyShotType _enemyShotType;
         [SerializeField,MinMaxSlider(1,10)] private Vector2 _fireRate;
-        [SerializeField] private Projectile.Projectile _projectil;
+        [SerializeField] private Projectile.BaseProjectile _projectil;
 
         public int Hp => _hp;
 
@@ -28,6 +28,6 @@ namespace EnemySystem
 
         public Vector2 FireRate => _fireRate;
 
-        public Projectile.Projectile Projectil => _projectil;
+        public Projectile.BaseProjectile Projectil => _projectil;
     }
 }

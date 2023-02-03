@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Projectile
 {
-    public class Projectile : MonoBehaviour
+    public class BaseProjectile : MonoBehaviour
     {
         [SerializeField] private float _speed;
         [SerializeField] private int _damage;
@@ -41,7 +41,7 @@ namespace Projectile
                     }
                     break;
                 case ProjectileWho.Enemy:
-                    if(col.gameObject.TryGetComponent(out Player.Player player))
+                    if(col.gameObject.TryGetComponent(out Player.PlayerManager player))
                     {
                         player.DoDamage(_damage);
                         Exploed();

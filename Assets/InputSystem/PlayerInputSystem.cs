@@ -53,6 +53,24 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Switch To Right Weapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""52d0ac33-b814-4577-9e28-71ac7d7e6e4b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Switch To Left Weapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""36662615-fcb1-4704-84be-b8b8df735746"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -88,6 +106,28 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""action"": ""Shoot"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5220e18c-918a-4a22-b3fa-8aabc8267172"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch To Right Weapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8feff4d8-cf20-4383-85ee-59a788cc989f"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Switch To Left Weapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -99,6 +139,8 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
+        m_Player_SwitchToRightWeapon = m_Player.FindAction("Switch To Right Weapon", throwIfNotFound: true);
+        m_Player_SwitchToLeftWeapon = m_Player.FindAction("Switch To Left Weapon", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -161,6 +203,8 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Rotate;
     private readonly InputAction m_Player_Shoot;
+    private readonly InputAction m_Player_SwitchToRightWeapon;
+    private readonly InputAction m_Player_SwitchToLeftWeapon;
     public struct PlayerActions
     {
         private @PlayerInputSystem m_Wrapper;
@@ -168,6 +212,8 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
+        public InputAction @SwitchToRightWeapon => m_Wrapper.m_Player_SwitchToRightWeapon;
+        public InputAction @SwitchToLeftWeapon => m_Wrapper.m_Player_SwitchToLeftWeapon;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -186,6 +232,12 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 @Shoot.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
                 @Shoot.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnShoot;
+                @SwitchToRightWeapon.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchToRightWeapon;
+                @SwitchToRightWeapon.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchToRightWeapon;
+                @SwitchToRightWeapon.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchToRightWeapon;
+                @SwitchToLeftWeapon.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchToLeftWeapon;
+                @SwitchToLeftWeapon.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchToLeftWeapon;
+                @SwitchToLeftWeapon.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchToLeftWeapon;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -199,6 +251,12 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 @Shoot.started += instance.OnShoot;
                 @Shoot.performed += instance.OnShoot;
                 @Shoot.canceled += instance.OnShoot;
+                @SwitchToRightWeapon.started += instance.OnSwitchToRightWeapon;
+                @SwitchToRightWeapon.performed += instance.OnSwitchToRightWeapon;
+                @SwitchToRightWeapon.canceled += instance.OnSwitchToRightWeapon;
+                @SwitchToLeftWeapon.started += instance.OnSwitchToLeftWeapon;
+                @SwitchToLeftWeapon.performed += instance.OnSwitchToLeftWeapon;
+                @SwitchToLeftWeapon.canceled += instance.OnSwitchToLeftWeapon;
             }
         }
     }
@@ -208,5 +266,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnRotate(InputAction.CallbackContext context);
         void OnShoot(InputAction.CallbackContext context);
+        void OnSwitchToRightWeapon(InputAction.CallbackContext context);
+        void OnSwitchToLeftWeapon(InputAction.CallbackContext context);
     }
 }
