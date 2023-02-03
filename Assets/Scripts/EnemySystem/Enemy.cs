@@ -1,9 +1,12 @@
 using System;
 using System.Collections;
+using Pool;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Enemy : MonoBehaviour, IDisposable
+
+public class Enemy : MonoBehaviour , IDisposable , IPoolable<Enemy>
+
 {
     public event Action<Enemy> OnEnemyDied;
 
@@ -100,10 +103,13 @@ public class Enemy : MonoBehaviour, IDisposable
         CheckHp();
     }
 
-    public void Dispose()
-    {
-        Destroy(this);
-    }
+
+   public void Dispose()
+   {
+      OnDispos?.Invoke(this);
+   }
+
+   public event Action<Enemy> OnDispos;
 }
 
 public enum EnemyShotType
