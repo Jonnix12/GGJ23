@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour , IDisposable
       _rangeType = rangeType;
 
       StartCoroutine(Move());
+      StartCoroutine(Shot());
    }
 
    public void SetRange(float range,float playerOfSet)
@@ -37,24 +38,51 @@ public class Enemy : MonoBehaviour , IDisposable
       _playerOfSet = playerOfSet;
    }
 
-   private IEnumerator Move()
+   private IEnumerator Shot()
    {
       while (true)
       {
-         Vector2 vector2 = Player.Player.Instance.transform.position;
-         var x = Random.Range(vector2.x + _playerOfSet, vector2.x + _rage);
-         var y = Random.Range(vector2.y + _playerOfSet, vector2.y + _rage);
+         ShootProjectile();
+         yield return new WaitForSeconds(Random.Range(_fireRate.x, _fireRate.y));
+      }
+   }
+   
+   private void ShootProjectile()
+   {
+      var _rotation = (Player.Player.Instance.transform.position - transform.position).normalized;
+      Quaternion quaternion = Quaternion.Euler(_rotation.x,_rotation.y,0);
+      GameObject projectile = Instantiate(_projectil.gameObject, transform.position, quaternion);
+      //projectile.transform.rotation = quaternion;
+   }
 
-         _dircsation = new Vector2(x, y);
-         yield return new WaitForSeconds(Random.Range(0,5));
+   private IEnumerator Move()
+   {
+      int time = 0;
+      while (true)
+      {
+         if (Vector2.Distance(transform.position,Player.Player.Instance.transform.position) < _playerOfSet)
+         {
+            var dirctain = (Player.Player.Instance.transform.position - transform.position);
+            time = 4;
+            _dircsation = dirctain  * 3;
+         }
+         else
+         {
+            Vector2 vector2 = Player.Player.Instance.transform.position;
+            var x = Random.Range(vector2.x - _rage, vector2.x + _rage);
+            var y = Random.Range(vector2.y - _rage, vector2.y + _rage); 
+            _dircsation = new Vector2(x, y);
+            time = Random.Range(0, 5);
+         }
+         
+
+         yield return new WaitForSeconds(time);
       }
    }
    
    private void Update()
    {
       transform.position = Vector2.MoveTowards(transform.position,_dircsation , _moveSpeed * Time.deltaTime);
-
-      CheckHp();
    }
 
    private void CheckHp()
@@ -63,6 +91,12 @@ public class Enemy : MonoBehaviour , IDisposable
       {
          OnEnemyDied?.Invoke(this);
       }
+   }
+
+   public void DoDamage(int damage)
+   {
+      _hp -= damage;
+      CheckHp();
    }
 
    public void Dispose()

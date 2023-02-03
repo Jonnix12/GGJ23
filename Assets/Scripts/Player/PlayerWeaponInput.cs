@@ -7,6 +7,7 @@ namespace Player
     {
         [SerializeField] GameObject _indicator;
         [SerializeField] GameObject _projectile;
+        [SerializeField] private Transform _spownPoint;
         private PlayerInputSystem _playerInputSystem;
         private Vector2 _rotation;
         private float _angle;
@@ -35,7 +36,7 @@ namespace Player
         private void ShootProjectile()
         {
             Quaternion quaternion = new Quaternion(-_rotation.x, _rotation.y, 0, 0);
-            GameObject projectile = Instantiate(_projectile, _indicator.transform.position, quaternion);
+            GameObject projectile = Instantiate(_projectile, _spownPoint.transform.position + _spownPoint.transform.forward * 10, quaternion);
             projectile.transform.rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
         }
 

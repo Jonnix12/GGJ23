@@ -254,13 +254,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1903226354}
   _spwonPoint: {fileID: 1845000538}
-  _sortDis: 2.29
-  _longDis: 3.92
+  _PlayerOfSet: 1.5
+  _sortDis: 4
+  _longDis: 7
   _enemyDatas:
   - {fileID: 11400000, guid: b8f6522758acf7b4bbf05120b3398e6e, type: 2}
   - {fileID: 11400000, guid: b8f6522758acf7b4bbf05120b3398e6e, type: 2}
   - {fileID: 11400000, guid: b8f6522758acf7b4bbf05120b3398e6e, type: 2}
   - {fileID: 11400000, guid: b8f6522758acf7b4bbf05120b3398e6e, type: 2}
+  - {fileID: 11400000, guid: 707775ef34ab43a4db3b84fa3b2d716c, type: 2}
+  - {fileID: 11400000, guid: 707775ef34ab43a4db3b84fa3b2d716c, type: 2}
+  - {fileID: 11400000, guid: 707775ef34ab43a4db3b84fa3b2d716c, type: 2}
 --- !u!114 &1724395586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,6 +321,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3362384003248615386, guid: 14608289601daec45858b0bbf384854f, type: 3}
+      propertyPath: _speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 4711583766753648681, guid: 14608289601daec45858b0bbf384854f, type: 3}
       propertyPath: m_Name
       value: Player
