@@ -17,8 +17,8 @@ namespace Player
             _playerInputSystem.Player.Rotate.performed += ctx => _rotation = ctx.ReadValue<Vector2>();
             _playerInputSystem.Player.Rotate.performed += ctx => _rotation = ctx.ReadValue<Vector2>();
             _playerInputSystem.Player.Shoot.performed += ctx => ShootProjectile();
-            _playerInputSystem.Player.SwitchToRightWeapon.performed += ctx => PlayerManager.Instance.PlayerWeaponHandler.ChangeWeapon(true);
-            _playerInputSystem.Player.SwitchToLeftWeapon.performed += ctx => PlayerManager.Instance.PlayerWeaponHandler.ChangeWeapon(false);
+            _playerInputSystem.Player.SwitchToRightWeapon.performed += ctx => PlayerManager.Instance.PlayerWeaponHandler.ChangeWeapon(true,_angle);
+            _playerInputSystem.Player.SwitchToLeftWeapon.performed += ctx => PlayerManager.Instance.PlayerWeaponHandler.ChangeWeapon(false,_angle);
         }
 
         private void Update()
@@ -32,6 +32,7 @@ namespace Player
                 return;
             _angle = Mathf.Atan2(-_rotation.x, _rotation.y) * Mathf.Rad2Deg;
             _indicator.transform.rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
+            PlayerManager.Instance.PlayerWeaponHandler.ChangeSpriteByRotation(_angle);
         }
 
         private void ShootProjectile()
@@ -39,6 +40,7 @@ namespace Player
             Quaternion quaternion = new Quaternion(-_rotation.x, _rotation.y, 0, 0);
             PlayerManager.Instance.PlayerWeaponHandler.CurrentWeapon.Shoot(quaternion, _angle, _spawnPoint);
         }
+
 
         private void OnEnable()
         {

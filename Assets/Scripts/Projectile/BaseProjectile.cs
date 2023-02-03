@@ -57,7 +57,6 @@ namespace Projectile
                     {
                         player.DoDamage(_damage);
                         Exploed();
-                        Debug.Log("Hit player");
                     }
                     break;
                 default:
