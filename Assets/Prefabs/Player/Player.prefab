@@ -344,6 +344,8 @@ MonoBehaviour:
   _hp: 30
   _playerInputHandler: {fileID: 8949509454514008478}
   _playerWeaponHandler: {fileID: 713749127804350}
+  spriteRenderer: {fileID: 4711583766753648695}
+  _collider2D: {fileID: 981350779348682415}
 --- !u!114 &8949509454514008478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,6 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  _dodgeTime: 2
 --- !u!114 &8754530229074980884
 MonoBehaviour:
   m_ObjectHideFlags: 0

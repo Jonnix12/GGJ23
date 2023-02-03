@@ -71,6 +71,15 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dodge"",
+                    ""type"": ""Button"",
+                    ""id"": ""8830d221-a09b-4ecd-8ee7-bfaec3edd315"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -128,6 +137,17 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""action"": ""Switch To Left Weapon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3c782e27-f8e9-4fc9-93ef-66010c108bd7"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Dodge"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -141,6 +161,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         m_Player_Shoot = m_Player.FindAction("Shoot", throwIfNotFound: true);
         m_Player_SwitchToRightWeapon = m_Player.FindAction("Switch To Right Weapon", throwIfNotFound: true);
         m_Player_SwitchToLeftWeapon = m_Player.FindAction("Switch To Left Weapon", throwIfNotFound: true);
+        m_Player_Dodge = m_Player.FindAction("Dodge", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -205,6 +226,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Shoot;
     private readonly InputAction m_Player_SwitchToRightWeapon;
     private readonly InputAction m_Player_SwitchToLeftWeapon;
+    private readonly InputAction m_Player_Dodge;
     public struct PlayerActions
     {
         private @PlayerInputSystem m_Wrapper;
@@ -214,6 +236,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         public InputAction @Shoot => m_Wrapper.m_Player_Shoot;
         public InputAction @SwitchToRightWeapon => m_Wrapper.m_Player_SwitchToRightWeapon;
         public InputAction @SwitchToLeftWeapon => m_Wrapper.m_Player_SwitchToLeftWeapon;
+        public InputAction @Dodge => m_Wrapper.m_Player_Dodge;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -238,6 +261,9 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 @SwitchToLeftWeapon.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchToLeftWeapon;
                 @SwitchToLeftWeapon.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchToLeftWeapon;
                 @SwitchToLeftWeapon.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSwitchToLeftWeapon;
+                @Dodge.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDodge;
+                @Dodge.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDodge;
+                @Dodge.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDodge;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -257,6 +283,9 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 @SwitchToLeftWeapon.started += instance.OnSwitchToLeftWeapon;
                 @SwitchToLeftWeapon.performed += instance.OnSwitchToLeftWeapon;
                 @SwitchToLeftWeapon.canceled += instance.OnSwitchToLeftWeapon;
+                @Dodge.started += instance.OnDodge;
+                @Dodge.performed += instance.OnDodge;
+                @Dodge.canceled += instance.OnDodge;
             }
         }
     }
@@ -268,5 +297,6 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         void OnShoot(InputAction.CallbackContext context);
         void OnSwitchToRightWeapon(InputAction.CallbackContext context);
         void OnSwitchToLeftWeapon(InputAction.CallbackContext context);
+        void OnDodge(InputAction.CallbackContext context);
     }
 }
