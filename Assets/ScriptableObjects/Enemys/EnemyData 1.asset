@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EnemyData 1
   m_EditorClassIdentifier: 
   _hp: 3
-  _id: 1
+  _id: 0
   _moveSpeed: 3
   _range: 0
   _enemyShotType: 0

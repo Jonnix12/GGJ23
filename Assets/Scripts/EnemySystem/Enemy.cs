@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour , IDisposable , IPoolable<Enemy>
     public event Action<Enemy> OnEnemyDied;
 
     private int _hp;
-    private int _id;
+    [SerializeField] private int _id;
     private float _moveSpeed;
 
     private Vector2 _dircsation;
