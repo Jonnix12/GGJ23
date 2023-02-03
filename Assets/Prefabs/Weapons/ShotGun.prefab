@@ -74,5 +74,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5444c73b7e4f604e848a31648b481f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectile: {fileID: 7154606004833445571, guid: c919e233c78094a47b9b49e2dddcc48c, type: 3}
+  _projectile: {fileID: 2971759353202677934, guid: c919e233c78094a47b9b49e2dddcc48c, type: 3}
   angleBetweenProjectiles: 22

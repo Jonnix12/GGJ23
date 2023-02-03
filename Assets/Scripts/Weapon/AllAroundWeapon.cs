@@ -1,3 +1,5 @@
+using Pool;
+using Projectile;
 using UnityEngine;
 
 namespace Weapon
@@ -15,7 +17,8 @@ namespace Weapon
                 for (int i = 0; i < _amountOfProjectiles-1; i++)
                 {
                     angle += angleToAdd;
-                    GameObject projectile = Instantiate(_projectile, spawnPosition.transform.position + spawnPosition.transform.forward * 10, quaternion);
+                    BaseProjectile projectile = ProjectilePool.Instance.Pull(_projectile, null);
+                    projectile.transform.position = spawnPosition.parent.position;
                     projectile.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 }
             }

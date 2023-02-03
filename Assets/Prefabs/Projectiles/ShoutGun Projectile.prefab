@@ -103,7 +103,7 @@ MonoBehaviour:
   _damage: 3
   _maxLifeTime: 5
   _rb: {fileID: 8083003853409105543}
-  _projectileWho: 1
+  _projectileWho: 0
 --- !u!70 &8358260889709072532
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

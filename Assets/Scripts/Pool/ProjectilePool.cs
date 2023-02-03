@@ -33,6 +33,7 @@ namespace Pool
         private void AddObjectToPool(Projectile.BaseProjectile projectile)
         {
             projectile.gameObject.SetActive(false);
+            projectile.Reset();
             _pool.Push(projectile);
         }
     }

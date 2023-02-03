@@ -1,5 +1,7 @@
 using UnityEngine;
 using Player;
+using Pool;
+using Projectile;
 
 namespace Weapon
 {
@@ -8,15 +10,18 @@ namespace Weapon
         [SerializeField] private float angleBetweenProjectiles;
         public override void Shoot(Quaternion quaternion, float angle, Transform spawnPosition)
         {
-            GameObject projectile = Instantiate(_projectile, spawnPosition.transform.position + spawnPosition.transform.forward * 10, quaternion);
+            BaseProjectile projectile = ProjectilePool.Instance.Pull(_projectile, null);
+            projectile.transform.position = spawnPosition.parent.position;
             projectile.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
+         
             angle += angleBetweenProjectiles;
-            GameObject secondProjectile = Instantiate(_projectile, spawnPosition.transform.position + spawnPosition.transform.forward * 10, quaternion);
+            BaseProjectile secondProjectile = ProjectilePool.Instance.Pull(_projectile, null);
+            projectile.transform.position = spawnPosition.parent.position;
             secondProjectile.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-            angle -= angleBetweenProjectiles*2;
-            GameObject thirdProjectile = Instantiate(_projectile, spawnPosition.transform.position + spawnPosition.transform.forward * 10, quaternion);
+            angle -= angleBetweenProjectiles * 2;
+            BaseProjectile thirdProjectile = ProjectilePool.Instance.Pull(_projectile, null);
+            projectile.transform.position = spawnPosition.parent.position;
             thirdProjectile.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         }
     }
