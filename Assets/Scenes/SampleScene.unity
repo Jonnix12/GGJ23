@@ -395,9 +395,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8674223823364409336, guid: 14608289601daec45858b0bbf384854f, type: 3}
+      propertyPath: _playerWeaponsWheel.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674223823364409336, guid: 14608289601daec45858b0bbf384854f, type: 3}
       propertyPath: _playerWeaponsWheel.Array.data[0]
       value: 
       objectReference: {fileID: 3088262585458198465, guid: 620ffaa7f6023934d85fcef56dd9614a, type: 3}
+    - target: {fileID: 8674223823364409336, guid: 14608289601daec45858b0bbf384854f, type: 3}
+      propertyPath: _playerWeaponsWheel.Array.data[2]
+      value: 
+      objectReference: {fileID: 3918577790384136543, guid: f5fcd356bb81a6b4c887127e246f5b2f, type: 3}
     - target: {fileID: 8754530229074980884, guid: 14608289601daec45858b0bbf384854f, type: 3}
       propertyPath: _spawnPoint
       value: 
