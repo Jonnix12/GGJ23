@@ -10,6 +10,8 @@ namespace EnemySystem
     {
         [Header("Base Stat")]
         [SerializeField] private int _hp;
+
+        [SerializeField] private int _id;
         [Header("Movement")]
         [SerializeField] private float _moveSpeed;
 
@@ -19,6 +21,8 @@ namespace EnemySystem
         [SerializeField] private Projectile.BaseProjectile _projectil;
 
         public int Hp => _hp;
+
+        public int ID => _id;
 
         public float MoveSpeed => _moveSpeed;
 

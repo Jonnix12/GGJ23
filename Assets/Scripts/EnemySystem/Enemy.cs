@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour , IDisposable , IPoolable<Enemy>
     public event Action<Enemy> OnEnemyDied;
 
     private int _hp;
-
+    private int _id;
     private float _moveSpeed;
 
     private Vector2 _dircsation;
@@ -23,9 +23,12 @@ public class Enemy : MonoBehaviour , IDisposable , IPoolable<Enemy>
     private Vector2 _fireRate;
     private BaseProjectile _projectile;
 
+    public int ID => _id;
+
     public Range RangeType => _rangeType;
-    public void Init(int hp, float moveSpeed, BaseProjectile projectil, Vector2 fireRate, Range rangeType)
+    public void Init(int hp, float moveSpeed, BaseProjectile projectil, Vector2 fireRate, Range rangeType,int id)
     {
+        _id = id;
         _hp = hp;
         _projectile = projectil;
         _moveSpeed = moveSpeed;
@@ -56,7 +59,8 @@ public class Enemy : MonoBehaviour , IDisposable , IPoolable<Enemy>
         var _rotation = (Player.PlayerManager.Instance.transform.position - transform.position).normalized;
         Quaternion quaternion = Quaternion.Euler(_rotation.x, _rotation.y, 0);
         float _angle = Mathf.Atan2(-_rotation.x, _rotation.y) * Mathf.Rad2Deg;
-        BaseProjectile projectile = ProjectilePool.Instance.Pull(_projectile, transform);
+        BaseProjectile projectile = ProjectilePool.Instance.Pull(_projectile.ID, transform);
+        projectile.transform.position = transform.position;
         projectile.transform.rotation = Quaternion.AngleAxis(_angle, Vector3.forward);
     }
 
@@ -94,6 +98,7 @@ public class Enemy : MonoBehaviour , IDisposable , IPoolable<Enemy>
     {
         if (_hp <= 0)
         {
+            Dispose();
             OnEnemyDied?.Invoke(this);
         }
     }
@@ -106,7 +111,8 @@ public class Enemy : MonoBehaviour , IDisposable , IPoolable<Enemy>
 
 
    public void Dispose()
-   {
+   { 
+       gameObject.SetActive(false);
       OnDispos?.Invoke(this);
    }
 

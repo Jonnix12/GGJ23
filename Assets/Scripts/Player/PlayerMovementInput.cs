@@ -44,7 +44,7 @@ namespace Player
 
         private void Move()
         {
-            Vector2 m = (new Vector2(move.x, move.y) * Time.deltaTime * 100f).normalized / 100;
+            Vector2 m = new Vector2(move.x, move.y).normalized * Time.deltaTime * _speed;
             transform.Translate(m, Space.World);
         }
 
