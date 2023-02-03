@@ -9,6 +9,8 @@ namespace Player
 public class PlayerWeaponHandler : MonoBehaviour
 {
     [SerializeField] List<BaseWeapon> _playerWeaponsWheel;
+    [SerializeField] SpriteRenderer LeftWeapon;
+    [SerializeField] SpriteRenderer RightWeapon;
 
         private BaseWeapon _currentWeapon;
         private int _currentWeaponID;
@@ -63,6 +65,11 @@ public class PlayerWeaponHandler : MonoBehaviour
                 _currentWeaponID = _playerWeaponsWheel.Count-1;
                 _currentWeapon = _playerWeaponsWheel[_currentWeaponID];
             }
+        }
+
+        private void ChangeSpriteByRotation()
+        {
+
         }
     }
 }
