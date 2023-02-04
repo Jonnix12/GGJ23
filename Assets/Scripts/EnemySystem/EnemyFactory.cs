@@ -1,15 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using Pool;
 using Projectile;
 using UnityEngine;
 using Weapon;
+using Random = UnityEngine.Random;
+
 
 namespace EnemySystem
 {
     public class EnemyFactory : MonoSingleton<EnemyFactory>
     {
         [SerializeField] private EnemyPool _pool;
-        [SerializeField] private BaseProjectile _projectile;
         public Enemy GetEnemy(EnemyData enemyData)
         {
             Enemy enemy = _pool.PullEnemy(enemyData.ID);
@@ -30,7 +32,7 @@ namespace EnemySystem
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            weapon.Init(_projectile);
+            weapon.Init(enemyData.Projectil);
             enemy.Init(enemyData.Hp,enemyData.MoveSpeed,enemyData.FireRate,weapon,enemyData.Range,enemyData.ID);
             
             return enemy;

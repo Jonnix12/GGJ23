@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/ScriptableObjects/Enemies/GreenPepper.asset.meta
+guid: 259231bdbad3b8f4b9b4b6c6b6f8c0f1
+NativeFormatImporter:
+========
 guid: 0851605490a599b46b6ac5cb681d93ea
 DefaultImporter:
+>>>>>>>> main:Assets/TextMesh Pro/Examples & Extras/Scenes/26 - Dropdown Placeholder Example.unity.meta
   externalObjects: {}
+  mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5447513240524299394}
   - component: {fileID: 8506081076167549510}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Weapon Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4921893948685869758}
   - component: {fileID: 1695430912129889678}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Aim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590334109093487403}
   m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0.32, z: 0}
+  m_LocalPosition: {x: 0.016, y: 0.42, z: 0}
   m_LocalScale: {x: 1.0585123, y: 1.0585123, z: 1.0585123}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -157,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 291cd045d8c8ba848a9c07c1ace18679, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 00a21a7745dfcaa498bf27e3d81070db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8504616337731038586}
   - component: {fileID: 713749127804350}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Weapon Indication
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -216,9 +216,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerWeaponsWheel:
-  - {fileID: 3088262585458198465, guid: 620ffaa7f6023934d85fcef56dd9614a, type: 3}
   - {fileID: -3151541394955526254, guid: 85bdc3d4975e06e4f93d7b003bc1a15e, type: 3}
-  - {fileID: 3918577790384136543, guid: f5fcd356bb81a6b4c887127e246f5b2f, type: 3}
+  - {fileID: 3088262585458198465, guid: 620ffaa7f6023934d85fcef56dd9614a, type: 3}
   LeftWeapon: {fileID: 3544767485507642789}
   RightWeapon: {fileID: 8506081076167549510}
 --- !u!1 &4711583766753648681
@@ -235,11 +234,11 @@ GameObject:
   - component: {fileID: 8949509454514008478}
   - component: {fileID: 3362384003248615386}
   - component: {fileID: 8754530229074980884}
-  - component: {fileID: 5453704158055734524}
   - component: {fileID: 2143305805047354449}
   - component: {fileID: 730603001898109749}
   - component: {fileID: 4711583766753648694}
-  m_Layer: 0
+  - component: {fileID: 1903226363}
+  m_Layer: 3
   m_Name: 30' Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +307,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.48, y: 0.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -326,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed625c8151b44aa3aab6f42052291831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 30
+  _hp: 5
   _playerInputHandler: {fileID: 8949509454514008478}
   _playerWeaponHandler: {fileID: 713749127804350}
   _playerAnimationHandler: {fileID: 2143305805047354449}
@@ -346,7 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerMovement: {fileID: 3362384003248615386}
   _playerWeapon: {fileID: 8754530229074980884}
-  _playerUIInputHandler: {fileID: 5453704158055734524}
+  _playerUIInputHandler: {fileID: 0}
 --- !u!114 &3362384003248615386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aaae5ccce9974241b03115b5f41e8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
+  _speed: 7
   _dodgeTime: 2
 --- !u!114 &8754530229074980884
 MonoBehaviour:
@@ -375,18 +374,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _indicator: {fileID: 1907386149621348814}
   _spawnPoint: {fileID: 4921893948685869758}
---- !u!114 &5453704158055734524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4711583766753648681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49120d4f4514c994ca9cd456b7212949, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2143305805047354449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,7 +411,7 @@ PolygonCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.48, y: 0.48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -460,6 +447,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &1903226363
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4711583766753648681}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &8939804069502554188
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3601329630111000963}
   - component: {fileID: 3544767485507642789}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Weapon Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}

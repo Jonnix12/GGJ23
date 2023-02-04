@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/ScriptableObjects/Enemies/Peans.asset.meta
+guid: 8c7e6b5ff6422a849886da2088ce775b
+NativeFormatImporter:
+========
+guid: d6f75aeb61dbcb746aab183ddb1148ab
+folderAsset: yes
+DefaultImporter:
+>>>>>>>> main:Assets/Prefabs/Intros.meta
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
