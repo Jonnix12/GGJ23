@@ -15,11 +15,11 @@ namespace Weapon
             // projectile.transform.position = spawnPosition.parent.position;
             // projectile.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
             
-            base.Shoot(quaternion,angle += angleBetweenProjectiles,spawnPosition);
             angle += angleBetweenProjectiles;
+            base.Shoot(quaternion,angle += angleBetweenProjectiles,spawnPosition);
             
-            base.Shoot(quaternion,angle -= angleBetweenProjectiles * 2,spawnPosition);
             angle -= angleBetweenProjectiles * 2;
+            base.Shoot(quaternion,angle -= angleBetweenProjectiles * 2,spawnPosition);
             
         }
     }
