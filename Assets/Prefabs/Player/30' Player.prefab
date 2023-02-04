@@ -238,6 +238,7 @@ GameObject:
   - component: {fileID: 730603001898109749}
   - component: {fileID: 4711583766753648694}
   - component: {fileID: 1903226363}
+  - component: {fileID: 8693392241997513397}
   m_Layer: 3
   m_Name: 30' Player
   m_TagString: Untagged
@@ -345,7 +346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerMovement: {fileID: 3362384003248615386}
   _playerWeapon: {fileID: 8754530229074980884}
-  _playerUIInputHandler: {fileID: 0}
+  _playerUIInputHandler: {fileID: 8693392241997513397}
 --- !u!114 &3362384003248615386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,6 +469,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8693392241997513397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4711583766753648681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49120d4f4514c994ca9cd456b7212949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8939804069502554188
 GameObject:
   m_ObjectHideFlags: 0
