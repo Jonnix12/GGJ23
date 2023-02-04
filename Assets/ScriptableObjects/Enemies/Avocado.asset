@@ -16,6 +16,6 @@ MonoBehaviour:
   _id: 8
   _moveSpeed: 3
   _range: 0
-  _enemyShotType: 2
-  _fireRate: {x: 2.7385066, y: 5.486099}
+  _enemyShotType: 1
+  _fireRate: {x: 10, y: 10}
   _projectil: {fileID: 1666398230618425727, guid: 58766038e4592d64498739f74e469ead, type: 3}
