@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e51a159f90a34579a9d802d93adc1147, type: 3}
   m_Name: Corn
   m_EditorClassIdentifier: 
-  _hp: 2
+  _hp: 3
   _id: 0
   _moveSpeed: 2
   _range: 1
   _enemyShotType: 2
-  _fireRate: {x: 2.7385066, y: 5.486099}
+  _fireRate: {x: 6.0587006, y: 6.6457024}
   _projectil: {fileID: 1666398230618425727, guid: 58766038e4592d64498739f74e469ead, type: 3}
