@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4200578346861462193}
   - component: {fileID: 7323905980181198549}
   - component: {fileID: 877787636655175179}
+  - component: {fileID: 7959417834416480251}
   m_Layer: 7
   m_Name: RedPepper
   m_TagString: Untagged
@@ -120,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4734d0bad263a42a1fabffee042da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shotHandler: {fileID: 7959417834416480251}
   _id: 1
 --- !u!61 &7323905980181198549
 BoxCollider2D:
@@ -168,3 +170,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7959417834416480251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140926859374374517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de497c3e1ddc9e44c836d09a9de9148c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 2140926859374374516}

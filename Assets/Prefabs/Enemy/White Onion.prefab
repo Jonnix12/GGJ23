@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7435643714415329220}
   - component: {fileID: 8542448790598189742}
   - component: {fileID: 4901690652729863107}
+  - component: {fileID: 3586018472644157283}
   m_Layer: 7
   m_Name: White Onion
   m_TagString: Untagged
@@ -120,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4734d0bad263a42a1fabffee042da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shotHandler: {fileID: 3586018472644157283}
   _id: 4
 --- !u!61 &8542448790598189742
 BoxCollider2D:
@@ -168,3 +170,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &3586018472644157283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493635280681887647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de497c3e1ddc9e44c836d09a9de9148c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 493635280681887646}

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6663524513686441136}
   - component: {fileID: 7637126083082284762}
   - component: {fileID: 6577589530825826719}
+  - component: {fileID: 1009057063272525952}
   m_Layer: 7
   m_Name: GreenPepper
   m_TagString: Untagged
@@ -120,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4734d0bad263a42a1fabffee042da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shotHandler: {fileID: 1009057063272525952}
   _id: 3
 --- !u!61 &7637126083082284762
 BoxCollider2D:
@@ -168,3 +170,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1009057063272525952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6548490356319803748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de497c3e1ddc9e44c836d09a9de9148c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 6548490356319803749}
