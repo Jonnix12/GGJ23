@@ -80,6 +80,15 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Open/Close Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""a8d0dc8c-fb23-4977-9a14-23009bf95d29"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -258,6 +267,28 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""action"": ""Dodge"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d678d865-02ce-4679-8cbb-74d3fee1cf97"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Open/Close Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""eabac400-146c-4387-a033-2752ad5d4c89"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Open/Close Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -287,6 +318,24 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""name"": ""Up"",
                     ""type"": ""Button"",
                     ""id"": ""8cdb9779-3d8f-4395-9424-e9d4c8de8ec9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Open/CloseMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""2639e84c-878a-4b3a-b560-0fd511ff59f0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Enter"",
+                    ""type"": ""Button"",
+                    ""id"": ""12780f1d-33a3-433e-ad04-0750a4b87455"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -348,6 +397,50 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""action"": ""Up"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6dc28a90-d91e-434f-b0c8-a00892fc8752"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Open/CloseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""71faafbb-1b17-4c4d-8424-b2cd3f7ead68"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Open/CloseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""70bada04-214d-48c9-8702-b8ea2f9bbcb5"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Enter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""205a5dc5-1958-467a-9cef-78e60ffb2e94"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Enter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -362,11 +455,14 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         m_Player_SwitchToRightWeapon = m_Player.FindAction("Switch To Right Weapon", throwIfNotFound: true);
         m_Player_SwitchToLeftWeapon = m_Player.FindAction("Switch To Left Weapon", throwIfNotFound: true);
         m_Player_Dodge = m_Player.FindAction("Dodge", throwIfNotFound: true);
+        m_Player_OpenCloseMenu = m_Player.FindAction("Open/Close Menu", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_MoveToNextScene = m_Menu.FindAction("MoveToNextScene", throwIfNotFound: true);
         m_Menu_Down = m_Menu.FindAction("Down", throwIfNotFound: true);
         m_Menu_Up = m_Menu.FindAction("Up", throwIfNotFound: true);
+        m_Menu_OpenCloseMenu = m_Menu.FindAction("Open/CloseMenu", throwIfNotFound: true);
+        m_Menu_Enter = m_Menu.FindAction("Enter", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -432,6 +528,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SwitchToRightWeapon;
     private readonly InputAction m_Player_SwitchToLeftWeapon;
     private readonly InputAction m_Player_Dodge;
+    private readonly InputAction m_Player_OpenCloseMenu;
     public struct PlayerActions
     {
         private @PlayerInputSystem m_Wrapper;
@@ -442,6 +539,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         public InputAction @SwitchToRightWeapon => m_Wrapper.m_Player_SwitchToRightWeapon;
         public InputAction @SwitchToLeftWeapon => m_Wrapper.m_Player_SwitchToLeftWeapon;
         public InputAction @Dodge => m_Wrapper.m_Player_Dodge;
+        public InputAction @OpenCloseMenu => m_Wrapper.m_Player_OpenCloseMenu;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -469,6 +567,9 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 @Dodge.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDodge;
                 @Dodge.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDodge;
                 @Dodge.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDodge;
+                @OpenCloseMenu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenCloseMenu;
+                @OpenCloseMenu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenCloseMenu;
+                @OpenCloseMenu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenCloseMenu;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -491,6 +592,9 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 @Dodge.started += instance.OnDodge;
                 @Dodge.performed += instance.OnDodge;
                 @Dodge.canceled += instance.OnDodge;
+                @OpenCloseMenu.started += instance.OnOpenCloseMenu;
+                @OpenCloseMenu.performed += instance.OnOpenCloseMenu;
+                @OpenCloseMenu.canceled += instance.OnOpenCloseMenu;
             }
         }
     }
@@ -502,6 +606,8 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
     private readonly InputAction m_Menu_MoveToNextScene;
     private readonly InputAction m_Menu_Down;
     private readonly InputAction m_Menu_Up;
+    private readonly InputAction m_Menu_OpenCloseMenu;
+    private readonly InputAction m_Menu_Enter;
     public struct MenuActions
     {
         private @PlayerInputSystem m_Wrapper;
@@ -509,6 +615,8 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         public InputAction @MoveToNextScene => m_Wrapper.m_Menu_MoveToNextScene;
         public InputAction @Down => m_Wrapper.m_Menu_Down;
         public InputAction @Up => m_Wrapper.m_Menu_Up;
+        public InputAction @OpenCloseMenu => m_Wrapper.m_Menu_OpenCloseMenu;
+        public InputAction @Enter => m_Wrapper.m_Menu_Enter;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -527,6 +635,12 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 @Up.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnUp;
                 @Up.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnUp;
                 @Up.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnUp;
+                @OpenCloseMenu.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnOpenCloseMenu;
+                @OpenCloseMenu.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnOpenCloseMenu;
+                @OpenCloseMenu.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnOpenCloseMenu;
+                @Enter.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnEnter;
+                @Enter.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnEnter;
+                @Enter.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnEnter;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -540,6 +654,12 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 @Up.started += instance.OnUp;
                 @Up.performed += instance.OnUp;
                 @Up.canceled += instance.OnUp;
+                @OpenCloseMenu.started += instance.OnOpenCloseMenu;
+                @OpenCloseMenu.performed += instance.OnOpenCloseMenu;
+                @OpenCloseMenu.canceled += instance.OnOpenCloseMenu;
+                @Enter.started += instance.OnEnter;
+                @Enter.performed += instance.OnEnter;
+                @Enter.canceled += instance.OnEnter;
             }
         }
     }
@@ -552,11 +672,14 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         void OnSwitchToRightWeapon(InputAction.CallbackContext context);
         void OnSwitchToLeftWeapon(InputAction.CallbackContext context);
         void OnDodge(InputAction.CallbackContext context);
+        void OnOpenCloseMenu(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {
         void OnMoveToNextScene(InputAction.CallbackContext context);
         void OnDown(InputAction.CallbackContext context);
         void OnUp(InputAction.CallbackContext context);
+        void OnOpenCloseMenu(InputAction.CallbackContext context);
+        void OnEnter(InputAction.CallbackContext context);
     }
 }
