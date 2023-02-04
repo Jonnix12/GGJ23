@@ -60,7 +60,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Open/Close Menu",
+                    "name": "Open Menu",
                     "type": "Button",
                     "id": "a8d0dc8c-fb23-4977-9a14-23009bf95d29",
                     "expectedControlType": "Button",
@@ -204,6 +204,17 @@
                 },
                 {
                     "name": "",
+                    "id": "406c4630-f3b6-463a-87e6-9f66404bc9f0",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch To Right Weapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8feff4d8-cf20-4383-85ee-59a788cc989f",
                     "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
@@ -253,7 +264,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Open/Close Menu",
+                    "action": "Open Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -264,7 +275,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Open/Close Menu",
+                    "action": "Open Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -302,18 +313,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Open/CloseMenu",
+                    "name": "CloseMenu",
                     "type": "Button",
                     "id": "2639e84c-878a-4b3a-b560-0fd511ff59f0",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Enter",
-                    "type": "Button",
-                    "id": "12780f1d-33a3-433e-ad04-0750a4b87455",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -383,7 +385,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Open/CloseMenu",
+                    "action": "CloseMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -394,29 +396,46 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Open/CloseMenu",
+                    "action": "CloseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "TutorialMenu",
+            "id": "118baa22-e529-4d32-bff1-a93249e8c222",
+            "actions": [
+                {
+                    "name": "GoBack",
+                    "type": "Button",
+                    "id": "f539fd6f-d789-43db-a566-c00657957cea",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "da6bfce4-5332-4b4f-aa2e-5a649928a5f5",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "GoBack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "70bada04-214d-48c9-8702-b8ea2f9bbcb5",
-                    "path": "<Keyboard>/enter",
+                    "id": "275dd1b9-4d7f-4d09-85a4-e106da720419",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Enter",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "205a5dc5-1958-467a-9cef-78e60ffb2e94",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Enter",
+                    "action": "GoBack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
