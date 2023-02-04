@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 7
-  _dodgeTime: 2
+  _dodgeTime: 0.5
 --- !u!114 &8754530229074980884
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ namespace Player
         [SerializeField] private int _speed;
         [SerializeField] private float _dodgeTime;
 
+        private float joystickAngle;
         private PlayerInputSystem _playerInputSystem;
         private Vector2 move;
 
@@ -33,10 +34,8 @@ namespace Player
         private IEnumerator DoDodge()
         {
             _playerInputSystem.Player.Dodge.Disable();
-            Sprite sprite = PlayerManager.Instance.SpriteRenderer.sprite;
-            PlayerManager.Instance.SpriteRenderer.sprite = null;
+            PlayerManager.Instance.PlayerAnimationHandler.PlayDashAnimation(joystickAngle);
             yield return new WaitForSeconds(_dodgeTime);
-            PlayerManager.Instance.SpriteRenderer.sprite = sprite;
             _playerInputSystem.Player.Dodge.Enable();
         }
 
@@ -48,7 +47,7 @@ namespace Player
                 return;
             }
             Vector2 m = new Vector2(move.x, move.y).normalized * Time.deltaTime * _speed;
-            float joystickAngle = Mathf.Atan2(-move.x, move.y) * Mathf.Rad2Deg;
+            joystickAngle = Mathf.Atan2(-move.x, move.y) * Mathf.Rad2Deg;
             transform.Translate(m, Space.World);
             PlayerManager.Instance.PlayerAnimationHandler.ChangeIdleSprite(joystickAngle);
         }
