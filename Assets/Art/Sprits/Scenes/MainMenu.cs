@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     private void Awake()
     {
         _playerInputSystem = new PlayerInputSystem();
-        _playerInputSystem.Menu.OpenMenu.performed += ctx => MoveToNextScene();
+        _playerInputSystem.Menu.MoveToNextScene.performed += ctx => MoveToNextScene();
 
     }
 
