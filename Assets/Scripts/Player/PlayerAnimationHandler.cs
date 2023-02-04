@@ -51,15 +51,6 @@ namespace Player
                 _animator.SetBool("IsMovingRight", true);
             }
         }
-
-        public void PlayDashAnimation(float joystickAngle)
-        {
-            if (joystickAngle > 0 && joystickAngle < 180)
-                _animator.SetTrigger("DashLeft");
-
-            else if(joystickAngle < 0 && joystickAngle > -180)
-                _animator.SetTrigger("DashRight");
-        }
     }
 }
 
