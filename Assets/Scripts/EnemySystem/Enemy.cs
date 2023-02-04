@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour , IDisposable , IPoolable<Enemy>
     public event Action<Enemy> OnEnemyDied;
 
     private int _hp;
+    [SerializeField] private ShotHandler _shotHandler;
     [SerializeField] private int _id;
     private float _moveSpeed;
 
@@ -50,6 +51,7 @@ public class Enemy : MonoBehaviour , IDisposable , IPoolable<Enemy>
     {
         while (true)
         {
+            _shotHandler.Shot();
             ShootProjectile();
             yield return new WaitForSeconds(Random.Range(_fireRate.x, _fireRate.y));
         }

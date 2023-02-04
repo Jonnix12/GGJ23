@@ -11,7 +11,7 @@ namespace Player
 
         private PlayerInputSystem _playerInputSystem;
         private Vector2 move;
-        private float joystickAngle;
+
         private void Awake()
         {
             _playerInputSystem = new PlayerInputSystem();
@@ -33,8 +33,10 @@ namespace Player
         private IEnumerator DoDodge()
         {
             _playerInputSystem.Player.Dodge.Disable();
-            PlayerManager.Instance.PlayerAnimationHandler.PlayDashAnimation(joystickAngle);
+            Sprite sprite = PlayerManager.Instance.SpriteRenderer.sprite;
+            PlayerManager.Instance.SpriteRenderer.sprite = null;
             yield return new WaitForSeconds(_dodgeTime);
+            PlayerManager.Instance.SpriteRenderer.sprite = sprite;
             _playerInputSystem.Player.Dodge.Enable();
         }
 
@@ -46,10 +48,9 @@ namespace Player
                 return;
             }
             Vector2 m = new Vector2(move.x, move.y).normalized * Time.deltaTime * _speed;
-            joystickAngle = Mathf.Atan2(-move.x, move.y) * Mathf.Rad2Deg;
+            float joystickAngle = Mathf.Atan2(-move.x, move.y) * Mathf.Rad2Deg;
             transform.Translate(m, Space.World);
             PlayerManager.Instance.PlayerAnimationHandler.ChangeIdleSprite(joystickAngle);
-            
         }
 
         private void OnEnable()

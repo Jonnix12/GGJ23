@@ -13,7 +13,7 @@ namespace Player
         {
             _animator.SetBool("IsMovingLeft", false);
             _animator.SetBool("IsMovingRight", false);
-            _animator.SetBool("IsMovingUp", false);
+                _animator.SetBool("IsMovingUp", false);
         }
 
         public void ChangeIdleSprite(float rotate)
@@ -50,15 +50,6 @@ namespace Player
                 _animator.SetBool("IsMovingLeft", false);
                 _animator.SetBool("IsMovingRight", true);
             }
-        }
-
-        public void PlayDashAnimation(float rotate)
-        {
-            if (rotate > 0 && rotate <= 180)
-                _animator.SetTrigger("DashLeft");
-
-            else if(rotate < 0 && rotate > -180)
-                _animator.SetTrigger("DashRight");
         }
     }
 }

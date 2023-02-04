@@ -2,12 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace UI
+public class GameManager : MonoSingleton<GameManager>
 {
-    public class PauseMenu : MonoBehaviour
-    {
-
-    }
 }
-
-

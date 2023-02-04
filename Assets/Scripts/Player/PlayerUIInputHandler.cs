@@ -1,42 +1,18 @@
-using UI;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace Player
+public class PlayerUIInputHandler : MonoBehaviour
 {
-    public class PlayerUIInputHandler : MonoBehaviour
+    // Start is called before the first frame update
+    void Start()
     {
-        private PlayerInputSystem _playerInputSystem;
-        private void Awake()
-        {
-            _playerInputSystem = new PlayerInputSystem();
-            _playerInputSystem.Player.OpenMenu.performed += ctx => OpenMenu();
-        }
+        
+    }
 
-        private void OpenMenu()
-        {
-            SetActivePlayerInput(false);
-            PauseMenu.Instance.OpenPauseMenu();
-        }
-
-        public void SetActivePlayerInput(bool toActive)
-        {
-            if(toActive)
-                _playerInputSystem.Player.Enable();
-
-            else
-                _playerInputSystem.Player.Disable();
-        }
-
-        private void OnEnable()
-        {
-            _playerInputSystem.Menu.Enable();
-        }
-
-        private void OnDisable()
-        {
-            _playerInputSystem.Menu.Disable();
-        }
-
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
-

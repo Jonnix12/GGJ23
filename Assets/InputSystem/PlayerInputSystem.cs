@@ -82,7 +82,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Open Menu"",
+                    ""name"": ""Open/Close Menu"",
                     ""type"": ""Button"",
                     ""id"": ""a8d0dc8c-fb23-4977-9a14-23009bf95d29"",
                     ""expectedControlType"": ""Button"",
@@ -226,17 +226,6 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""406c4630-f3b6-463a-87e6-9f66404bc9f0"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Switch To Right Weapon"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""8feff4d8-cf20-4383-85ee-59a788cc989f"",
                     ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
@@ -286,7 +275,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Open Menu"",
+                    ""action"": ""Open/Close Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -297,7 +286,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Open Menu"",
+                    ""action"": ""Open/Close Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -335,9 +324,18 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""CloseMenu"",
+                    ""name"": ""Open/CloseMenu"",
                     ""type"": ""Button"",
                     ""id"": ""2639e84c-878a-4b3a-b560-0fd511ff59f0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Enter"",
+                    ""type"": ""Button"",
+                    ""id"": ""12780f1d-33a3-433e-ad04-0750a4b87455"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -407,7 +405,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CloseMenu"",
+                    ""action"": ""Open/CloseMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -418,46 +416,29 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""CloseMenu"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                }
-            ]
-        },
-        {
-            ""name"": ""TutorialMenu"",
-            ""id"": ""118baa22-e529-4d32-bff1-a93249e8c222"",
-            ""actions"": [
-                {
-                    ""name"": ""GoBack"",
-                    ""type"": ""Button"",
-                    ""id"": ""f539fd6f-d789-43db-a566-c00657957cea"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""da6bfce4-5332-4b4f-aa2e-5a649928a5f5"",
-                    ""path"": ""<Keyboard>/escape"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""GoBack"",
+                    ""action"": ""Open/CloseMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""275dd1b9-4d7f-4d09-85a4-e106da720419"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""id"": ""70bada04-214d-48c9-8702-b8ea2f9bbcb5"",
+                    ""path"": ""<Keyboard>/enter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""GoBack"",
+                    ""action"": ""Enter"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""205a5dc5-1958-467a-9cef-78e60ffb2e94"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Enter"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -474,16 +455,14 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         m_Player_SwitchToRightWeapon = m_Player.FindAction("Switch To Right Weapon", throwIfNotFound: true);
         m_Player_SwitchToLeftWeapon = m_Player.FindAction("Switch To Left Weapon", throwIfNotFound: true);
         m_Player_Dodge = m_Player.FindAction("Dodge", throwIfNotFound: true);
-        m_Player_OpenMenu = m_Player.FindAction("Open Menu", throwIfNotFound: true);
+        m_Player_OpenCloseMenu = m_Player.FindAction("Open/Close Menu", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_MoveToNextScene = m_Menu.FindAction("MoveToNextScene", throwIfNotFound: true);
         m_Menu_Down = m_Menu.FindAction("Down", throwIfNotFound: true);
         m_Menu_Up = m_Menu.FindAction("Up", throwIfNotFound: true);
-        m_Menu_CloseMenu = m_Menu.FindAction("CloseMenu", throwIfNotFound: true);
-        // TutorialMenu
-        m_TutorialMenu = asset.FindActionMap("TutorialMenu", throwIfNotFound: true);
-        m_TutorialMenu_GoBack = m_TutorialMenu.FindAction("GoBack", throwIfNotFound: true);
+        m_Menu_OpenCloseMenu = m_Menu.FindAction("Open/CloseMenu", throwIfNotFound: true);
+        m_Menu_Enter = m_Menu.FindAction("Enter", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -549,7 +528,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SwitchToRightWeapon;
     private readonly InputAction m_Player_SwitchToLeftWeapon;
     private readonly InputAction m_Player_Dodge;
-    private readonly InputAction m_Player_OpenMenu;
+    private readonly InputAction m_Player_OpenCloseMenu;
     public struct PlayerActions
     {
         private @PlayerInputSystem m_Wrapper;
@@ -560,7 +539,7 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         public InputAction @SwitchToRightWeapon => m_Wrapper.m_Player_SwitchToRightWeapon;
         public InputAction @SwitchToLeftWeapon => m_Wrapper.m_Player_SwitchToLeftWeapon;
         public InputAction @Dodge => m_Wrapper.m_Player_Dodge;
-        public InputAction @OpenMenu => m_Wrapper.m_Player_OpenMenu;
+        public InputAction @OpenCloseMenu => m_Wrapper.m_Player_OpenCloseMenu;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -588,9 +567,9 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 @Dodge.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDodge;
                 @Dodge.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDodge;
                 @Dodge.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDodge;
-                @OpenMenu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenMenu;
-                @OpenMenu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenMenu;
-                @OpenMenu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenMenu;
+                @OpenCloseMenu.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenCloseMenu;
+                @OpenCloseMenu.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenCloseMenu;
+                @OpenCloseMenu.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenCloseMenu;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -613,9 +592,9 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 @Dodge.started += instance.OnDodge;
                 @Dodge.performed += instance.OnDodge;
                 @Dodge.canceled += instance.OnDodge;
-                @OpenMenu.started += instance.OnOpenMenu;
-                @OpenMenu.performed += instance.OnOpenMenu;
-                @OpenMenu.canceled += instance.OnOpenMenu;
+                @OpenCloseMenu.started += instance.OnOpenCloseMenu;
+                @OpenCloseMenu.performed += instance.OnOpenCloseMenu;
+                @OpenCloseMenu.canceled += instance.OnOpenCloseMenu;
             }
         }
     }
@@ -627,7 +606,8 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
     private readonly InputAction m_Menu_MoveToNextScene;
     private readonly InputAction m_Menu_Down;
     private readonly InputAction m_Menu_Up;
-    private readonly InputAction m_Menu_CloseMenu;
+    private readonly InputAction m_Menu_OpenCloseMenu;
+    private readonly InputAction m_Menu_Enter;
     public struct MenuActions
     {
         private @PlayerInputSystem m_Wrapper;
@@ -635,7 +615,8 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         public InputAction @MoveToNextScene => m_Wrapper.m_Menu_MoveToNextScene;
         public InputAction @Down => m_Wrapper.m_Menu_Down;
         public InputAction @Up => m_Wrapper.m_Menu_Up;
-        public InputAction @CloseMenu => m_Wrapper.m_Menu_CloseMenu;
+        public InputAction @OpenCloseMenu => m_Wrapper.m_Menu_OpenCloseMenu;
+        public InputAction @Enter => m_Wrapper.m_Menu_Enter;
         public InputActionMap Get() { return m_Wrapper.m_Menu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -654,9 +635,12 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 @Up.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnUp;
                 @Up.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnUp;
                 @Up.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnUp;
-                @CloseMenu.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnCloseMenu;
-                @CloseMenu.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnCloseMenu;
-                @CloseMenu.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnCloseMenu;
+                @OpenCloseMenu.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnOpenCloseMenu;
+                @OpenCloseMenu.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnOpenCloseMenu;
+                @OpenCloseMenu.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnOpenCloseMenu;
+                @Enter.started -= m_Wrapper.m_MenuActionsCallbackInterface.OnEnter;
+                @Enter.performed -= m_Wrapper.m_MenuActionsCallbackInterface.OnEnter;
+                @Enter.canceled -= m_Wrapper.m_MenuActionsCallbackInterface.OnEnter;
             }
             m_Wrapper.m_MenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -670,46 +654,16 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
                 @Up.started += instance.OnUp;
                 @Up.performed += instance.OnUp;
                 @Up.canceled += instance.OnUp;
-                @CloseMenu.started += instance.OnCloseMenu;
-                @CloseMenu.performed += instance.OnCloseMenu;
-                @CloseMenu.canceled += instance.OnCloseMenu;
+                @OpenCloseMenu.started += instance.OnOpenCloseMenu;
+                @OpenCloseMenu.performed += instance.OnOpenCloseMenu;
+                @OpenCloseMenu.canceled += instance.OnOpenCloseMenu;
+                @Enter.started += instance.OnEnter;
+                @Enter.performed += instance.OnEnter;
+                @Enter.canceled += instance.OnEnter;
             }
         }
     }
     public MenuActions @Menu => new MenuActions(this);
-
-    // TutorialMenu
-    private readonly InputActionMap m_TutorialMenu;
-    private ITutorialMenuActions m_TutorialMenuActionsCallbackInterface;
-    private readonly InputAction m_TutorialMenu_GoBack;
-    public struct TutorialMenuActions
-    {
-        private @PlayerInputSystem m_Wrapper;
-        public TutorialMenuActions(@PlayerInputSystem wrapper) { m_Wrapper = wrapper; }
-        public InputAction @GoBack => m_Wrapper.m_TutorialMenu_GoBack;
-        public InputActionMap Get() { return m_Wrapper.m_TutorialMenu; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(TutorialMenuActions set) { return set.Get(); }
-        public void SetCallbacks(ITutorialMenuActions instance)
-        {
-            if (m_Wrapper.m_TutorialMenuActionsCallbackInterface != null)
-            {
-                @GoBack.started -= m_Wrapper.m_TutorialMenuActionsCallbackInterface.OnGoBack;
-                @GoBack.performed -= m_Wrapper.m_TutorialMenuActionsCallbackInterface.OnGoBack;
-                @GoBack.canceled -= m_Wrapper.m_TutorialMenuActionsCallbackInterface.OnGoBack;
-            }
-            m_Wrapper.m_TutorialMenuActionsCallbackInterface = instance;
-            if (instance != null)
-            {
-                @GoBack.started += instance.OnGoBack;
-                @GoBack.performed += instance.OnGoBack;
-                @GoBack.canceled += instance.OnGoBack;
-            }
-        }
-    }
-    public TutorialMenuActions @TutorialMenu => new TutorialMenuActions(this);
     public interface IPlayerActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -718,17 +672,14 @@ public partial class @PlayerInputSystem : IInputActionCollection2, IDisposable
         void OnSwitchToRightWeapon(InputAction.CallbackContext context);
         void OnSwitchToLeftWeapon(InputAction.CallbackContext context);
         void OnDodge(InputAction.CallbackContext context);
-        void OnOpenMenu(InputAction.CallbackContext context);
+        void OnOpenCloseMenu(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {
         void OnMoveToNextScene(InputAction.CallbackContext context);
         void OnDown(InputAction.CallbackContext context);
         void OnUp(InputAction.CallbackContext context);
-        void OnCloseMenu(InputAction.CallbackContext context);
-    }
-    public interface ITutorialMenuActions
-    {
-        void OnGoBack(InputAction.CallbackContext context);
+        void OnOpenCloseMenu(InputAction.CallbackContext context);
+        void OnEnter(InputAction.CallbackContext context);
     }
 }
