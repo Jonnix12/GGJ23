@@ -12,7 +12,6 @@ namespace EnemySystem
     public class EnemyFactory : MonoSingleton<EnemyFactory>
     {
         [SerializeField] private EnemyPool _pool;
-        [SerializeField] private List<BaseProjectile> _projectile;
         public Enemy GetEnemy(EnemyData enemyData)
         {
             Enemy enemy = _pool.PullEnemy(enemyData.ID);
@@ -33,7 +32,7 @@ namespace EnemySystem
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            weapon.Init(_projectile[Random.Range(0,_projectile.Count)]);
+            weapon.Init(enemyData.Projectil);
             enemy.Init(enemyData.Hp,enemyData.MoveSpeed,enemyData.FireRate,weapon,enemyData.Range,enemyData.ID);
             
             return enemy;

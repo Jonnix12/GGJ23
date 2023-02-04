@@ -15,6 +15,9 @@ namespace Player
         public PlayerAnimationHandler PlayerAnimationHandler => _playerAnimationHandler;
 
         public SpriteRenderer SpriteRenderer => spriteRenderer;
+
+        public int Hp => _hp;
+
         public Collider2D Collider2D => _collider2D;
 
         public void DoDamage(int demage)
