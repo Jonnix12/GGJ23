@@ -18,4 +18,4 @@ MonoBehaviour:
   _range: 1
   _enemyShotType: 1
   _fireRate: {x: 4.742574, y: 5.6336637}
-  _projectil: {fileID: 1666398230618425727, guid: 58766038e4592d64498739f74e469ead, type: 3}
+  _projectil: {fileID: 1666398230618425727, guid: 283856faef3d7694cb41346a6a518efd, type: 3}

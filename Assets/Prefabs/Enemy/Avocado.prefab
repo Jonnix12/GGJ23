@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6581040870593066419}
   - component: {fileID: 8016868580227382499}
   - component: {fileID: 6639148298283087406}
+  - component: {fileID: 7118661802394934507}
   m_Layer: 7
   m_Name: Avocado
   m_TagString: Untagged
@@ -120,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4734d0bad263a42a1fabffee042da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shotHandler: {fileID: 7118661802394934507}
   _id: 8
 --- !u!61 &8016868580227382499
 BoxCollider2D:
@@ -168,3 +170,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &7118661802394934507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4172473340945781171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de497c3e1ddc9e44c836d09a9de9148c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 4172473340945781170}

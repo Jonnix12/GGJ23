@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8663744609064345707}
   - component: {fileID: 1270242783011111014}
   - component: {fileID: -5221173067944884578}
+  - component: {fileID: 8625297151279907147}
   m_Layer: 7
   m_Name: Corn
   m_TagString: Untagged
@@ -120,6 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4734d0bad263a42a1fabffee042da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _shotHandler: {fileID: 8625297151279907147}
   _id: 0
 --- !u!61 &1270242783011111014
 BoxCollider2D:
@@ -138,7 +140,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 0.13, y: 0.32}
     newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -168,3 +170,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8625297151279907147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6545902987432835432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de497c3e1ddc9e44c836d09a9de9148c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 6545902987432835435}

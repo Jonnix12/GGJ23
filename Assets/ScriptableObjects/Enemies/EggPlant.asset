@@ -15,7 +15,7 @@ MonoBehaviour:
   _hp: 75
   _id: 9
   _moveSpeed: 2
-  _range: 1
+  _range: 0
   _enemyShotType: 2
-  _fireRate: {x: 4.1299796, y: 5.486099}
-  _projectil: {fileID: 2971759353202677934, guid: 42fbaa5874b0b31458c8388128e5a2ec, type: 3}
+  _fireRate: {x: 6.7196007, y: 9.333031}
+  _projectil: {fileID: -2560163011487645572, guid: 82b4adc171bb073428e48e69a16685d3, type: 3}
